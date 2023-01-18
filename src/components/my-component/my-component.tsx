@@ -12,11 +12,12 @@ export class MyComponent {
   componentDidLoad() {
     const options = {
       root: document.querySelector('[data-scroll-root]'),
-      rootMargin: '0px',
+      rootMargin: '5px',
       threshold: 1.0
     }
     const observer = new IntersectionObserver((entries: any) => {
       entries.forEach(entry => {
+        console.log(entry);
         this._isSticky = !entry.isIntersecting ? true: false;
       })
     }, options);
